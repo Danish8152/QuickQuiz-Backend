@@ -14,7 +14,8 @@ app.use(express.json());
 // ✅ Enable CORS for your frontend (local + deployed)
 const allowedOrigins = [
   process.env.FRONTEND_URL,          // local or deployed frontend URL
-  "http://localhost:5173"            // optional: allow local dev explicitly
+  "http://localhost:5173",
+  "https://quick-quiz-puce.vercel.app"            // optional: allow local dev explicitly
 ];
 
 app.use(cors({
