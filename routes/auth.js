@@ -52,7 +52,7 @@ router.post("/signin", async (req, res) => {
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET || "fallback-secret", { expiresIn: "7d" });
 
     // You can return token and basic user info
-    res.json({ message: "Login successful || Refresh the page for access", token, user: { id: user._id, name: user.name, email: user.email } });
+    res.json({ message: "Login successful", token, user: { id: user._id, name: user.name, email: user.email } });
   } catch (err) {
     console.error("SignIn error:", err);
     res.status(500).json({ error: "Server error", details: err.message });
